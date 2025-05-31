@@ -28,7 +28,8 @@ COPY --from=build /app/docker/entry-point.sh /root/entry-point.sh
 
 RUN chmod +x /root/dmp
 RUN chmod +x /root/entry-point.sh
-RUN apt update && dpkg --add-architecture i386 && apt install -y lib32gcc1 lib32gcc-s1 libcurl4-gnutls-dev:i386 screen unzip
+RUN dpkg --add-architecture i386
+RUN apt update && apt install -y lib32gcc1 lib32gcc-s1 libcurl4-gnutls-dev:i386 screen unzip
 
 RUN mkdir /root/config
 RUN mkdir /root/.klei
