@@ -16,6 +16,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:24.04  # 指定 Ubuntu 24.04 官方镜像
+      options: --platform linux/amd64 
     steps:
     - uses: actions/checkout@v4
     - name: Login to GitHub Package Registry
