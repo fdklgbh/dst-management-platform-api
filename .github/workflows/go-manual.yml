@@ -7,11 +7,8 @@ on:
         description: 'Choose a tag for the image'
         required: false
         default: 'dev'
-        type: choice
-        options:
-          - dev
-          - latest
-          - nightly
+        type: string
+
 
 env:
   # REGISTRY_SERVER_ADDRESS: ghcr.io/miracleeverywhere/dst-management-platform-api
