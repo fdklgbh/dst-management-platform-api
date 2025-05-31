@@ -25,7 +25,7 @@ WORKDIR /root
 # 从构建阶段复制必要的文件
 COPY --from=build /app/dmp /root/dmp
 COPY --from=build /app/docker/entry-point.sh /root/entry-point.sh
-
+RUN apt update && dpkg --add-architecture i386 && apt install -y lib32gcc1 lib32gcc-s1 libcurl4-gnutls-dev:i386 screen unzip
 RUN chmod +x /root/dmp
 RUN chmod +x /root/entry-point.sh
 
